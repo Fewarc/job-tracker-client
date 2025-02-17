@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { useTranslation } from "react-i18next";
+import Button from "../components/button";
 
 const HELLO = gql`
   query Query {
@@ -13,7 +14,14 @@ const Landing: React.FC = () => {
 
   console.log(data);
 
-  return <main>{t("landing_page.title")}</main>;
+  return (
+    <main>
+      <h1>{t("landing_page.title")}</h1>
+      <div>
+        <Button>Button</Button>
+      </div>
+    </main>
+  );
 };
 
 export default Landing;
