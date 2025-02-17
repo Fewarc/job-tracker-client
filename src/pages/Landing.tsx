@@ -1,5 +1,9 @@
+import { useTranslation } from "react-i18next";
+
 const Landing: React.FC = () => {
-  return <main>Landing</main>;
+  const { t } = useTranslation("translation");
+
+  return <main>{t("landing_page.title")}</main>;
 };
 
 export default Landing;
