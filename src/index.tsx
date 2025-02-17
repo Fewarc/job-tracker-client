@@ -3,17 +3,26 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 // needs to be bundled
 import "./i18n";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const apolloClient = new ApolloClient({
+  uri: process.env.REACT_APP_DEV_BACKEND,
+  cache: new InMemoryCache(),
+});
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ApolloProvider client={apolloClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ApolloProvider>
   </React.StrictMode>
 );
 
