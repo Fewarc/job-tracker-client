@@ -1,0 +1,36 @@
+@use "../abstract/variables" as vars;
+
+.input__container {
+  position: relative;
+  width: 100%;
+
+  .input__label {
+    font-size: vars.$font-medium;
+  }
+}
+
+.input {
+  all: unset;
+  box-sizing: border-box;
+  outline: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: vars.$secondary-color;
+  border-radius: vars.$sm-border-radius;
+
+  padding: 0 8px;
+
+  width: 100%;
+
+  &:focus {
+    border-color: vars.$primary-color;
+  }
+
+  &--white-border {
+    border-color: white;
+  }
+
+  &--primary-border {
+    border-color: vars.$primary-color;
+  }
+}

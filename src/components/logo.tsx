@@ -1,5 +1,5 @@
 interface LogoProps {
-  variant?: "regular" | "small";
+  variant?: "default" | "small";
   className?: string;
 }
 

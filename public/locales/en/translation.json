@@ -7,6 +7,10 @@
   },
 
   "login_page": {
-    "welcome": "Welcome!"
+    "welcome": "Welcome!",
+    "username": "Username",
+    "password": "Password",
+    "dot_or": "Dont't have and account?",
+    "signup": "Signup!"
   }
 }
