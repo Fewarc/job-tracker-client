@@ -1,0 +1,15 @@
+@use "../abstract/mixins" as mixins;
+@use "../abstract/variables" as vars;
+
+.card {
+  @include mixins.default-shadow;
+  @include mixins.flex-center(column);
+
+  width: fit-content;
+  border-radius: vars.$md-border-radius;
+  padding: 16px;
+
+  &--bg-secondary {
+    background-color: vars.$secondary-color;
+  }
+}

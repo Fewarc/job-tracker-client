@@ -1,6 +1,7 @@
 {
   "global": {},
   "landing_page": {
-    "title": "Landing page"
+    "title": "Landing page",
+    "login_button": "Login"
   }
 }

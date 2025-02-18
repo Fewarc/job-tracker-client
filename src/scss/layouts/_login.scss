@@ -1,0 +1,11 @@
+@use "../abstract/mixins" as mixins;
+@import "../abstract/variables";
+
+.login-page-layout {
+  @include mixins.flex-center;
+  height: 100%;
+
+  .card {
+    background-color: $secondary-color;
+  }
+}

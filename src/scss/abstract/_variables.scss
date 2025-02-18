@@ -2,10 +2,18 @@
 
 // colors
 $primary-color: aquamarine;
-$secondary-color: rgb(235, 235, 235);
+$secondary-color: rgb(242, 242, 242);
 $destructive: red;
 
 // font-sizes
 $font-small: f.rem(10px);
 $font-medium: f.rem(14px);
 $font-large: f.rem(18px);
+
+// widths and gaps
+$default-flex-gap: f.rem(16px);
+
+// border radius
+$sm-border-radius: f.rem(8px);
+$md-border-radius: f.rem(16px);
+$lg-border-radius: f.rem(24px);
