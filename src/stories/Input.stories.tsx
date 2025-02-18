@@ -27,3 +27,15 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {},
 };
+
+export const PrimaryBorder: Story = {
+  args: {
+    variant: "primary-border",
+  },
+};
+
+export const WhiteBorder: Story = {
+  args: {
+    variant: "white-border",
+  },
+};

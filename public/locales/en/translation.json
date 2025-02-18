@@ -3,14 +3,15 @@
 
   "landing_page": {
     "title": "Landing page",
-    "login_button": "Login"
+    "login_button": "Log in"
   },
 
   "login_page": {
     "welcome": "Welcome!",
     "username": "Username",
     "password": "Password",
+    "login": "Log in",
     "dot_or": "Dont't have and account?",
-    "signup": "Signup!"
+    "signup": "Sign up!"
   }
 }

@@ -18,7 +18,7 @@ const Login: React.FC = () => {
           <Input variant="primary-border" inputLabel={t("password")} />
         </div>
         <div className="login-buttons-container">
-          <Button>Login</Button>
+          <Button>{t("login")}</Button>
           <div className="or-signup">
             <p>{t("dot_or")}</p>
             <NavLink to="/">{t("signup")}</NavLink>

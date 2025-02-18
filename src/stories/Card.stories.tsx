@@ -32,10 +32,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const DefaultCard: Story = {
+export const Default: Story = {
   args: {},
 };
 
-export const SecondaryCard: Story = {
+export const Secondary: Story = {
   args: { className: "card--bg-secondary" },
 };
