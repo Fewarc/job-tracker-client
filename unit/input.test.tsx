@@ -1,6 +1,8 @@
-import Input from "../components/input";
+import React from "react";
 import { render } from "@testing-library/react";
+import Input from "../src/components/input";
 
+// TODO: more tests, add axe (WCAG)
 describe("Input component", () => {
   it("renders input conatiner", () => {
     const { getByTestId } = render(<Input />);

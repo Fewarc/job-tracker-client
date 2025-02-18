@@ -29,7 +29,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test:unit": "react-scripts test",
+    "test:e2e": "cypress run",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -63,6 +64,7 @@
     "@storybook/react": "8.5.6",
     "@storybook/react-webpack5": "8.5.6",
     "@storybook/test": "8.5.6",
+    "cypress": "^14.0.3",
     "eslint-plugin-storybook": "^0.11.3",
     "prop-types": "15.8.1",
     "storybook": "8.5.6",

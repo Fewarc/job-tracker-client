@@ -19,7 +19,7 @@ const Landing: React.FC = () => {
     <main className="landing-page-layout">
       <h1>{t("title")}</h1>
       <NavLink to="/login">
-        <Button>{t("login_button")}</Button>
+        <Button data-testid="go-to-login-button">{t("login_button")}</Button>
       </NavLink>
     </main>
   );
