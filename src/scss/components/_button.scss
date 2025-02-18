@@ -1,0 +1,52 @@
+@import "../abstract/variables";
+
+.button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  cursor: pointer;
+
+  &:hover {
+    -webkit-filter: brightness(95%);
+    filter: brightness(95%);
+  }
+
+  &:active {
+    scale: 1.05;
+  }
+
+  &--primary {
+    background-color: $primary-color;
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+  }
+
+  &--link {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  &--icon {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  &--destructive {
+    background-color: $destructive;
+    color: white;
+  }
+
+  &--size-small {
+    font-size: $font-small;
+  }
+
+  &--size-medium {
+    font-size: $font-medium;
+  }
+
+  &--size-large {
+    font-size: $font-large;
+  }
+}

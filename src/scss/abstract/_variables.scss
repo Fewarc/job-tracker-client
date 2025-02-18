@@ -1,0 +1,11 @@
+@use "./functions" as f;
+
+// colors
+$primary-color: aquamarine;
+$secondary-color: rgb(235, 235, 235);
+$destructive: red;
+
+// font-sizes
+$font-small: f.rem(10px);
+$font-medium: f.rem(14px);
+$font-large: f.rem(18px);
