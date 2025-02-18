@@ -1,5 +1,6 @@
 @use "../abstract/mixins" as mixins;
 @use "../abstract/variables" as vars;
+@use "../abstract/functions" as f;
 
 .card {
   @include mixins.default-shadow;
@@ -7,7 +8,7 @@
 
   width: fit-content;
   border-radius: vars.$md-border-radius;
-  padding: 16px;
+  padding: 0 f.rem(16px) f.rem(16px) f.rem(16px);
 
   &--bg-secondary {
     background-color: vars.$secondary-color;

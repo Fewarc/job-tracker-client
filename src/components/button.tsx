@@ -1,7 +1,13 @@
 import { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "link" | "icon" | "destructive";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "link"
+    | "icon"
+    | "destructive"
+    | "outline";
   size?: "small" | "medium" | "large";
   className?: string;
 }

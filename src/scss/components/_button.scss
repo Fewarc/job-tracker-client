@@ -17,10 +17,20 @@
 
   &--primary {
     background-color: $primary-color;
+    color: white;
   }
 
   &--secondary {
     background-color: $secondary-color;
+  }
+
+  &--outline {
+    background-color: $secondary-color;
+    border-width: 1px;
+    border-style: solid;
+    font-weight: 400;
+    border-color: $primary-color;
+    color: $primary-color;
   }
 
   &--link {

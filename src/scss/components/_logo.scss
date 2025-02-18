@@ -1,0 +1,7 @@
+@use "../abstract/variables" as vars;
+
+.logo {
+  span {
+    color: vars.$primary-color;
+  }
+}
