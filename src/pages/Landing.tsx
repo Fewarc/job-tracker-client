@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { useTranslation } from "react-i18next";
-import Button from "../components/button";
+import Button from "../components-shared/button";
 import { NavLink } from "react-router";
 
 const HELLO = gql`

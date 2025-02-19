@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import "../scss/style.scss";
-import Input from "../components/input";
+import Input from "../components-shared/input";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Input from "../src/components/input";
+import Input from "../src/components-shared/input";
 
 // TODO: more tests, add axe (WCAG)
 describe("Input component", () => {

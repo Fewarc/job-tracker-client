@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "unit/input.test.tsx"]
+  "include": ["src", "jest/input.test.tsx"]
 }

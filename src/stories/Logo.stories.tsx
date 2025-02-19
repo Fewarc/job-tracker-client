@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import "../scss/style.scss";
-import Logo from "../components/logo";
+import Logo from "../components-shared/logo";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

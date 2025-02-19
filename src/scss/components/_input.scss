@@ -33,4 +33,10 @@
   &--primary-border {
     border-color: vars.$primary-color;
   }
+
+  &__error {
+    color: vars.$destructive;
+    margin-top: 0px;
+    font-size: vars.$font-medium;
+  }
 }

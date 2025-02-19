@@ -8,7 +8,7 @@
 
   "login_page": {
     "welcome": "Welcome!",
-    "username": "Username",
+    "email": "E-mail",
     "password": "Password",
     "login": "Log in",
     "dot_or": "Dont't have and account?",
