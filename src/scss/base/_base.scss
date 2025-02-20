@@ -1,3 +1,5 @@
+@use "../abstract/mixins" as mixins;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -14,4 +16,14 @@ code {
 
 #root {
   height: 100vh;
+}
+
+main {
+  @include mixins.flex-center;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

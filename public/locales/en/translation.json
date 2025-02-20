@@ -13,5 +13,10 @@
     "login": "Log in",
     "dot_or": "Dont't have and account?",
     "signup": "Sign up!"
+  },
+
+  "error_page": {
+    "go_to_landing": "Go to Landing Page",
+    "error_occured": "An error occured"
   }
 }

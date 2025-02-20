@@ -28,6 +28,7 @@ const Login: React.FC = () => {
 
   const onSubmit = handleSubmit((data) => loginUser({ variables: data }));
 
+  throw new Error("TEST ERROR BOUNDARY");
   return (
     <main className="login-page-layout">
       <Card>

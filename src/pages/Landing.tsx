@@ -1,19 +1,9 @@
-import { gql, useQuery } from "@apollo/client";
 import { useTranslation } from "react-i18next";
 import Button from "../components-shared/button";
 import { NavLink } from "react-router";
 
-const HELLO = gql`
-  query Query {
-    hello
-  }
-`;
-
 const Landing: React.FC = () => {
-  const { loading, error, data } = useQuery(HELLO);
   const { t } = useTranslation("translation", { keyPrefix: "landing_page" });
-
-  console.log(data);
 
   return (
     <main className="landing-page-layout">

@@ -1,0 +1,13 @@
+@use "../abstract/mixins" as mixins;
+
+.error-page-layout {
+  div {
+    @include mixins.flex-center(column);
+    row-gap: 8px;
+
+    div {
+      @include mixins.flex-center;
+      column-gap: 32px;
+    }
+  }
+}

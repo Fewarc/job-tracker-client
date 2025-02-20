@@ -9,7 +9,7 @@
 
 @mixin flex-center($direction: row, $gap: vars.$default-flex-gap) {
   display: flex;
-  flex-direction: column;
+  flex-direction: $direction;
   align-items: center;
   justify-content: center;
 }
