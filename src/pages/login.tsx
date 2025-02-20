@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import Card from "../components-shared/card";
 import Logo from "../components-shared/logo";
-import Input from "../components-shared/input";
+import InputBar from "../components-shared/input-bar/input-bar";
 import Button from "../components-shared/button";
 import { NavLink } from "react-router";
 import { useForm } from "react-hook-form";
@@ -39,19 +39,16 @@ const Login: React.FC = () => {
         <Logo variant="default" />
         <p>{t("welcome")}</p>
         <form className="login-input-container" onSubmit={onSubmit}>
-          <Input
-            {...register("email")}
-            variant="primary-border"
-            inputLabel={t("email")}
-            error={errors.email?.message}
-          />
-          <Input
-            {...register("password")}
-            variant="primary-border"
-            inputLabel={t("password")}
-            error={errors.password?.message}
-            type="password"
-          />
+          <InputBar variant="primary-border">
+            <InputBar.Label>{t("email")}</InputBar.Label>
+            <InputBar.Input {...register("email")} />
+            <InputBar.Error>{errors.email?.message}</InputBar.Error>
+          </InputBar>
+          <InputBar variant="primary-border">
+            <InputBar.Label>{t("password")}</InputBar.Label>
+            <InputBar.Input {...register("password")} type="password" />
+            <InputBar.Error>{errors.password?.message}</InputBar.Error>
+          </InputBar>
           <div className="login-buttons-container">
             <Button loading={loading} type="submit">
               {t("login")}
