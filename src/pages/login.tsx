@@ -11,6 +11,7 @@ import { loginSchema } from "../utils/schemas";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../graphql/user";
 import { toast } from "sonner";
+import Form from "../components-shared/form/form";
 
 type LoginSchemaType = z.infer<typeof loginSchema>;
 
@@ -38,29 +39,31 @@ const Login: React.FC = () => {
       <Card>
         <Logo variant="default" />
         <p>{t("welcome")}</p>
-        <form className="login-input-container" onSubmit={onSubmit}>
-          <InputBar variant="primary-border">
-            <InputBar.Label>{t("email")}</InputBar.Label>
-            <InputBar.Input {...register("email")} />
-            <InputBar.Error>{errors.email?.message}</InputBar.Error>
-          </InputBar>
-          <InputBar variant="primary-border">
-            <InputBar.Label>{t("password")}</InputBar.Label>
-            <InputBar.Input {...register("password")} type="password" />
-            <InputBar.Error>{errors.password?.message}</InputBar.Error>
-          </InputBar>
-          <div className="login-buttons-container">
+        <Form onSubmit={onSubmit}>
+          <Form.Fields>
+            <InputBar variant="primary-border">
+              <InputBar.Label>{t("email")}</InputBar.Label>
+              <InputBar.Input {...register("email")} />
+              <InputBar.Error>{errors.email?.message}</InputBar.Error>
+            </InputBar>
+            <InputBar variant="primary-border">
+              <InputBar.Label>{t("password")}</InputBar.Label>
+              <InputBar.Input {...register("password")} type="password" />
+              <InputBar.Error>{errors.password?.message}</InputBar.Error>
+            </InputBar>
+          </Form.Fields>
+          <Form.Footer>
             <Button loading={loading} type="submit">
               {t("login")}
             </Button>
-            <div className="or-signup">
-              <p>{t("dot_or")}</p>
-              <Button variant="link">
-                <NavLink to="/">{t("signup")}</NavLink>
-              </Button>
-            </div>
-          </div>
-        </form>
+          </Form.Footer>
+        </Form>
+        <div className="or-signup">
+          <p>{t("dot_or")}</p>
+          <Button variant="link">
+            <NavLink to="/">{t("signup")}</NavLink>
+          </Button>
+        </div>
       </Card>
     </main>
   );

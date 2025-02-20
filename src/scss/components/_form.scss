@@ -1,0 +1,18 @@
+@use "../abstract/mixins" as mixins;
+
+.form {
+  width: 100%;
+
+  &__header {
+    display: block;
+  }
+
+  &__footer {
+    @include mixins.flex-center(column);
+  }
+
+  &__fields {
+    @include mixins.flex-center(column);
+    row-gap: 16px;
+  }
+}

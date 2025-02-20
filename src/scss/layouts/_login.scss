@@ -6,39 +6,33 @@
   height: 100%;
   padding: 0 8px;
 
+  .form {
+    margin-top: 32px;
+
+    &__fields {
+      padding-bottom: 32px;
+    }
+  }
+
   .card {
     background-color: $secondary-color;
     width: 100%;
     max-width: 360px;
 
-    .login-input-container {
-      margin-top: 32px;
-      display: flex;
-      flex-direction: column;
-      row-gap: 16px;
-
+    button {
       width: 100%;
     }
 
-    .login-buttons-container {
-      margin-top: 32px;
-      width: 100%;
+    .or-signup {
+      @include mixins.flex-center(column);
 
-      .button {
-        width: 100%;
-      }
+      font-size: $font-medium;
+      width: fit-content;
+      margin: auto;
 
-      .or-signup {
-        @include mixins.flex-center(column);
-
-        font-size: $font-medium;
+      a {
+        color: black;
         width: fit-content;
-        margin: auto;
-
-        a {
-          color: black;
-          width: fit-content;
-        }
       }
     }
   }
