@@ -1,15 +1,39 @@
+@use "../abstract/mixins" as mixins;
 @import "../abstract/variables";
 
 .button {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: $sm-border-radius;
+  position: relative;
+  display: block;
+  overflow: hidden;
 
   cursor: pointer;
 
   &:active {
     -webkit-filter: brightness(95%);
     filter: brightness(95%);
+  }
+
+  &__loading {
+    &__spinner {
+      @include mixins.animate-rotate;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+    }
+  }
+
+  &__content {
+    @include mixins.flex-center;
+    width: 100%;
+
+    &--loading {
+      visibility: hidden;
+    }
   }
 
   &--primary {

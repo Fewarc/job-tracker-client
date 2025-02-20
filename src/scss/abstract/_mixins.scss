@@ -1,4 +1,5 @@
 @use "../abstract/variables" as vars;
+@import "../abstract/animations";
 
 @mixin default-shadow {
   -webkit-box-shadow: 5px 5px 38px -22px rgba(54, 54, 70, 1);
@@ -11,4 +12,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+$rotate-duration: 1s;
+
+@mixin animate-rotate {
+  -webkit-animation: rotating $rotate-duration linear infinite;
+  -moz-animation: rotating $rotate-duration linear infinite;
+  -ms-animation: rotating $rotate-duration linear infinite;
+  -o-animation: rotating $rotate-duration linear infinite;
+  animation: rotating $rotate-duration linear infinite;
 }

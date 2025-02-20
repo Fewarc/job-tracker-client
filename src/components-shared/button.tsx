@@ -1,3 +1,4 @@
+import { LoaderCircle } from "lucide-react";
 import { ComponentProps } from "react";
 
 interface ButtonProps extends ComponentProps<"button"> {
@@ -9,12 +10,14 @@ interface ButtonProps extends ComponentProps<"button"> {
     | "destructive"
     | "outline";
   size?: "small" | "medium" | "large";
+  loading?: boolean;
   className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   size = "medium",
+  loading = false,
   className,
   ...props
 }) => {
@@ -23,7 +26,12 @@ const Button: React.FC<ButtonProps> = ({
       {...props}
       className={`button ${`button--${variant}`} ${`button--size-${size}`} ${className}`}
     >
-      {props.children}
+      <div
+        className={`button__content ${loading && "button__content--loading"}`}
+      >
+        {props.children}
+      </div>
+      {loading && <LoaderCircle className="button__loading__spinner" />}
     </button>
   );
 };

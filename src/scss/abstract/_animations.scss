@@ -1,0 +1,17 @@
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes rotating {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

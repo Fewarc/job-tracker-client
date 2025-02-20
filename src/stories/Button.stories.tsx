@@ -65,6 +65,12 @@ export const Destructive: Story = {
   },
 };
 
+export const Loading: Story = {
+  args: {
+    loading: true,
+  },
+};
+
 export const Large: Story = {
   args: { size: "large" },
 };

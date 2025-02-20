@@ -15,7 +15,7 @@ type LoginSchemaType = z.infer<typeof loginSchema>;
 
 const Login: React.FC = () => {
   const { t } = useTranslation("translation", { keyPrefix: "login_page" });
-  const [loginUser, { data: muttaionData, loading, error }] =
+  const [loginUser, { data: mutationData, loading, error }] =
     useMutation(LOGIN_USER);
   const {
     register,
@@ -27,8 +27,6 @@ const Login: React.FC = () => {
   });
 
   const onSubmit = handleSubmit((data) => loginUser({ variables: data }));
-
-  console.log(muttaionData);
 
   return (
     <main className="login-page-layout">
@@ -50,7 +48,9 @@ const Login: React.FC = () => {
             type="password"
           />
           <div className="login-buttons-container">
-            <Button type="submit">{t("login")}</Button>
+            <Button loading={loading} type="submit">
+              {t("login")}
+            </Button>
             <div className="or-signup">
               <p>{t("dot_or")}</p>
               <NavLink to="/">{t("signup")}</NavLink>
