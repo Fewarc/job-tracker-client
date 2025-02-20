@@ -28,6 +28,7 @@ const Input: React.FC<InputProps> = ({
         {...props}
         className={`input input--${variant} ${props.className}`}
         data-testid="input"
+        spellCheck={false}
       />
       {!!error && <p className="input__error">{error}</p>}
     </div>

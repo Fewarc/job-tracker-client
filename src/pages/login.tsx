@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "../utils/schemas";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../graphql/user";
+import { toast } from "sonner";
 
 type LoginSchemaType = z.infer<typeof loginSchema>;
 
@@ -17,7 +18,7 @@ const Login: React.FC = () => {
   const { t } = useTranslation("translation", { keyPrefix: "login_page" });
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
     onError: (error) => {
-      console.log(error);
+      toast.error(error.message);
     },
   });
 

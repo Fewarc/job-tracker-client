@@ -20,7 +20,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const httpLink = new HttpLink({ uri: "/graphql" });
+const httpLink = new HttpLink({ uri: process.env.REACT_APP_DEV_BACKEND });
 
 const apolloClient = new ApolloClient({
   uri: process.env.REACT_APP_DEV_BACKEND,
