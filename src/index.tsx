@@ -3,7 +3,16 @@ import ReactDOM from "react-dom/client";
 import App from "./app";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+  from,
+} from "@apollo/client";
+import { ErrorBoundary } from "react-error-boundary";
+import Error from "./pages/error";
+import { authMiddleware } from "./utils/middleware";
 // needs to be bundled
 import "./i18n";
 
@@ -11,18 +20,28 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
+const httpLink = new HttpLink({ uri: "/graphql" });
+
 const apolloClient = new ApolloClient({
   uri: process.env.REACT_APP_DEV_BACKEND,
   cache: new InMemoryCache(),
+  link: from([authMiddleware, httpLink]),
 });
 
 root.render(
   <React.StrictMode>
-    <ApolloProvider client={apolloClient}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ApolloProvider>
+    <ErrorBoundary
+      FallbackComponent={({ error, resetErrorBoundary }) => (
+        <Error error={error} resetErrorBoundary={resetErrorBoundary} />
+      )}
+      onReset={() => window.location.replace("/")}
+    >
+      <ApolloProvider client={apolloClient}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ApolloProvider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 

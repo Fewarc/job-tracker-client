@@ -29,7 +29,7 @@
       }
 
       .or-signup {
-        @include mixins.flex-center;
+        @include mixins.flex-center(column);
 
         font-size: $font-medium;
         width: fit-content;
@@ -38,7 +38,6 @@
         a {
           color: black;
           width: fit-content;
-          margin: auto;
         }
       }
     }

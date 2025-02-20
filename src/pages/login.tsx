@@ -15,8 +15,12 @@ type LoginSchemaType = z.infer<typeof loginSchema>;
 
 const Login: React.FC = () => {
   const { t } = useTranslation("translation", { keyPrefix: "login_page" });
-  const [loginUser, { data: mutationData, loading, error }] =
-    useMutation(LOGIN_USER);
+  const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+    onError: (error) => {
+      console.log(error);
+    },
+  });
+
   const {
     register,
     formState: { errors },
@@ -28,7 +32,6 @@ const Login: React.FC = () => {
 
   const onSubmit = handleSubmit((data) => loginUser({ variables: data }));
 
-  throw new Error("TEST ERROR BOUNDARY");
   return (
     <main className="login-page-layout">
       <Card>
@@ -54,7 +57,9 @@ const Login: React.FC = () => {
             </Button>
             <div className="or-signup">
               <p>{t("dot_or")}</p>
-              <NavLink to="/">{t("signup")}</NavLink>
+              <Button variant="link">
+                <NavLink to="/">{t("signup")}</NavLink>
+              </Button>
             </div>
           </div>
         </form>

@@ -57,6 +57,14 @@
   &--link {
     background-color: transparent;
     padding: 0;
+    text-decoration: underline;
+    display: inline;
+    padding: 0;
+
+    a {
+      margin: 0;
+      display: inline;
+    }
   }
 
   &--icon {
