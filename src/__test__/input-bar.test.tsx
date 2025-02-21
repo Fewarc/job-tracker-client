@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import InputBar from "../components-shared/input-bar/input-bar";
 import { axe, toHaveNoViolations } from "jest-axe";
 
@@ -51,7 +51,7 @@ describe("Input component", () => {
     expect(inputError).toHaveTextContent(INPUT_ERROR_CONTENT);
   });
 
-  it("makes sure input meets accesibility standards", async () => {
+  it("should meet accesibility standards", async () => {
     const { getByTestId } = render(
       <InputBar>
         <InputBar.Label>Label</InputBar.Label>
@@ -62,5 +62,24 @@ describe("Input component", () => {
     const inputContainer = getByTestId("input-container");
 
     expect(await axe(inputContainer)).toHaveNoViolations();
+  });
+
+  it("should allow to type text into input", async () => {
+    const INPUT_TEXT = "text";
+    const { getByTestId } = render(
+      <InputBar>
+        <InputBar.Label>Label</InputBar.Label>
+        <InputBar.Input />
+        <InputBar.Error>Error</InputBar.Error>
+      </InputBar>
+    );
+
+    const input = getByTestId("input");
+
+    expect(input).toHaveValue("");
+
+    fireEvent.change(input, { target: { value: INPUT_TEXT } });
+
+    expect(input).toHaveValue(INPUT_TEXT);
   });
 });
