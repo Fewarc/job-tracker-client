@@ -26,13 +26,20 @@ const Button: React.FC<ButtonProps> = ({
     <button
       {...props}
       className={`button ${`button--${variant}`} ${`button--size-${size}`} ${className}`}
+      data-testid="button"
     >
       <div
         className={`button__content ${loading && "button__content--loading"}`}
+        data-testid="button-content"
       >
         {props.children}
       </div>
-      {loading && <LoaderCircle className="button__loading__spinner" />}
+      {loading && (
+        <LoaderCircle
+          className="button__loading__spinner"
+          data-testid="button-loader"
+        />
+      )}
     </button>
   );
 };
