@@ -11,7 +11,7 @@ import {
   from,
 } from "@apollo/client";
 import { ErrorBoundary } from "react-error-boundary";
-import Error from "./pages/error";
+import ErrorPage from "./pages/error";
 import { authMiddleware } from "./utils/middleware";
 // needs to be bundled
 import "./i18n";
@@ -32,7 +32,7 @@ root.render(
   <React.StrictMode>
     <ErrorBoundary
       FallbackComponent={({ error, resetErrorBoundary }) => (
-        <Error error={error} resetErrorBoundary={resetErrorBoundary} />
+        <ErrorPage error={error} resetErrorBoundary={resetErrorBoundary} />
       )}
       onReset={() => window.location.replace("/")}
     >

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { useInputBarContext } from "./input-bar-context";
 
 interface InputBarLabelProps {
@@ -6,7 +6,7 @@ interface InputBarLabelProps {
 }
 
 const InputbarLabel: React.FC<InputBarLabelProps> = ({ children }) => {
-  const {} = useInputBarContext();
+  useInputBarContext();
 
   return (
     <div className="input__label" data-testid="input-label">

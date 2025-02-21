@@ -1,3 +1,4 @@
+import React from "react";
 import { useInputBarContext } from "./input-bar-context";
 
 interface InputBarErrorProps {
@@ -9,7 +10,7 @@ const InputBarError: React.FC<InputBarErrorProps> = ({
   children,
   className,
 }) => {
-  const {} = useInputBarContext();
+  useInputBarContext();
 
   return (
     !!children && <p className={`input__error ${className}`}>{children}</p>

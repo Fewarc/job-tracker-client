@@ -1,12 +1,13 @@
+import React from "react";
 import { useTranslation } from "react-i18next";
 import Button from "../components-shared/button";
 
 interface ErrorProps {
-  error: any;
-  resetErrorBoundary: (...args: any[]) => void;
+  error: unknown;
+  resetErrorBoundary: (...args: unknown[]) => void;
 }
 
-const Error: React.FC<ErrorProps> = ({ error, resetErrorBoundary }) => {
+const ErrorPage: React.FC<ErrorProps> = ({ error, resetErrorBoundary }) => {
   const { t } = useTranslation("translation", { keyPrefix: "error_page" });
 
   return (
@@ -18,10 +19,10 @@ const Error: React.FC<ErrorProps> = ({ error, resetErrorBoundary }) => {
           </Button>
         </div>
         <pre>{t("error_occured")}</pre>
-        {error.message && <pre>{error.message}</pre>}
+        {error instanceof Error && <pre>{error.message}</pre>}
       </div>
     </main>
   );
 };
 
-export default Error;
+export default ErrorPage;

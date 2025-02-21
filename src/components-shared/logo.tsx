@@ -1,3 +1,5 @@
+import React from "react";
+
 interface LogoProps {
   variant?: "default" | "small";
   className?: string;

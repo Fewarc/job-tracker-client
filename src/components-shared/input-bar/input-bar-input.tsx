@@ -1,7 +1,8 @@
+import React from "react";
 import { ComponentProps } from "react";
 import { useInputBarContext } from "./input-bar-context";
 
-interface InputBarInputProps extends ComponentProps<"input"> {}
+type InputBarInputProps = ComponentProps<"input">;
 
 const InputBarInput: React.FC<InputBarInputProps> = ({ ...props }) => {
   const { variant } = useInputBarContext();

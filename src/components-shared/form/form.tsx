@@ -1,10 +1,11 @@
+import React from "react";
 import { ComponentProps } from "react";
 import FormContext from "./form-context";
 import FormHeader from "./form-header";
 import FormFooter from "./form-footer";
 import FormFields from "./form-fields";
 
-interface FormProps extends ComponentProps<"form"> {}
+type FormProps = ComponentProps<"form">;
 
 function Form({ children, ...props }: FormProps) {
   return (

@@ -1,3 +1,4 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import "../scss/style.scss";
 import InputBar from "../components-shared/input-bar/input-bar";

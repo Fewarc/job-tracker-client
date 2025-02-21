@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import InputBarContext from "./input-bar-context";
 import { InputBarVariant } from "../../types";
 import InputbarLabel from "./input-bar-label";

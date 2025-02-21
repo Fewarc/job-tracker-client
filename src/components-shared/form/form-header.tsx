@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactNode } from "react";
 import { useFormContext } from "./form-context";
 
@@ -6,7 +7,7 @@ interface FormHeaderProps {
 }
 
 const FormHeader: React.FC<FormHeaderProps> = ({ children }) => {
-  const {} = useFormContext();
+  useFormContext();
 
   return <div className="form__header">{children}</div>;
 };
