@@ -13,7 +13,15 @@ const InputBarError: React.FC<InputBarErrorProps> = ({
   useInputBarContext();
 
   return (
-    !!children && <p className={`input__error ${className}`}>{children}</p>
+    !!children && (
+      <p
+        className={`input__error ${className}`}
+        aria-label="input-error"
+        data-testid="input-error"
+      >
+        {children}
+      </p>
+    )
   );
 };
 

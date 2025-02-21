@@ -11,6 +11,8 @@ const InputBarInput: React.FC<InputBarInputProps> = ({ ...props }) => {
     <input
       {...props}
       className={`input input--${variant} ${props.className}`}
+      aria-label="input"
+      aria-labelledby="input-label"
       data-testid="input"
       spellCheck={false}
     />
